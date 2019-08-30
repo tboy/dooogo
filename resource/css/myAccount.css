@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.myAccount {
+  height: 100%;
+  position: relative;
+}
+.myAccount > div {
+  padding: 0 28px;
+}
+.myAccount_title {
+  height: 52px;
+  line-height: 52px;
+  background: #edf6fa;
+  font-weight: bolder;
+}
+.myAccount_content {
+  color: #666;
+}
+.content_balance_label {
+  height: 64px;
+  line-height: 64px;
+}
+.content_balance_value {
+  display: flex;
+  align-items: center;
+  margin: 0 0 46px 0;
+}
+.value_number {
+  font-size: 30px;
+}
+.value_button {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  background: #007398;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  margin: 0 0 0 10px;
+}
+.myAccount_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.myAccount_table_label {
+  background: #f1f1f1;
+}
+.myAccount_table th {
+  padding: 0 0 0 24px;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  font-weight: normal;
+}
+.myAccount_table td {
+  padding: 0 0 0 24px;
+  text-align: left;
+  height: 80px;
+  line-height: 80px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.myAccount_topUp {
+  width: 364px;
+  height: 188px;
+  padding: 14px!important;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #e6e6e6;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.myAccount_topUp_label {
+  font-size: 20px;
+  margin: 0 0 20px 0;
+}
+.myAccount_topUp_content {
+  height: 28px;
+  line-height: 28px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #c9c9c9;
+  padding: 0 8px;
+  margin: 15px 0 0 0;
+}
+.myAccount_topUp > button {
+  width: 66px;
+  height: 30px;
+  background: #007398;
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+}
+.myAccount_topUp_close::before {
+  content: "\2716";
+  color: #666;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+.myAccount_pay {
+  width: 294px;
+  height: 400px;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 18px!important;
+  color: #666;
+}
+.myAccount_pay_content {
+  line-height: 2;
+  margin: 20px 0;
+}
+.myAccount_pay_close::before {
+  content: "\2716";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+.pointer {
+  cursor: pointer;
+}
+.active {
+  color: #ffae22;
+}
+.myAccount_pay .pay-line-txt{
+  font-size: 13px;
+}
+.myAccount_pay .pay-line-txt .tip{
+  width: 65px;
+  margin-right: 10px;
+  display: inline-block;
+}

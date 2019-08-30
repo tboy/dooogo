@@ -1,0 +1,92 @@
+.row {
+    min-height: 30px;
+    margin-top: 30px;
+}
+
+.lb {
+    margin-right: 30px;
+    width: 140px;
+    font-weight: 400;
+    float: left;
+    font-size: 12px;
+    line-height: 30px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+.rg {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.select_time_box {
+    text-align: center;
+    min-height: 30px;
+}
+
+.cp {
+    background-image: url() !important;
+    padding: 0 !important;
+    text-align-last: center;
+}
+
+select {
+    text-align-last: center;
+    text-align: center;
+}
+
+.cl div {
+    width: 40px;
+    float: left;
+}
+
+.cl input[type="checkbox"] {
+    border: 1px solid #ccc;
+    margin: 2px;
+    width: auto;
+    height: auto;
+}
+
+.cl span {
+    float: right;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+}
+
+.r1 {
+    background: #45ba4e;
+}
+
+.r2 {
+    background: #2f8eed;
+}
+
+.r3 {
+    background: #ed8d18;
+}
+
+.r4 {
+    background: #de2821;
+}
+
+.r5 {
+    background: #666666;
+}
+
+.imgs {
+    width: 80px;
+    height: 80px;
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+
+.prow {
+    margin-top: 10px;
+}
+
+.rg.cl {
+    padding-top: 7px;
+}

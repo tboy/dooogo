@@ -1,0 +1,191 @@
+.case {
+    width: 100%;
+}
+
+.case-t {
+    width: 100%;
+    height: 52px;
+    line-height: 52px;
+    padding: 0 20px;
+    background: #edf6fa;
+    margin-bottom: 30px;
+}
+
+.case-t span {
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.case-t .ct-r {
+    float: right;
+    padding-left: 20px;
+    background: url(/images/load-page/home.png) no-repeat left center;
+    color: #666666;
+    font-size: 12px;
+}
+
+.case-t .ct-r a {
+    color: #666666;
+    font-size: 12px;
+    margin: 0 5px;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.case-t .ct-r a:hover {
+    color: #007398;
+}
+
+.case-list {
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
+.case-list ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.case-list ul li {
+    width: 220px;
+    margin: 0 10px;
+    border: 1px solid #d1d1d1;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.case-list ul li .cl-img {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.case-list ul li .cl-img img {
+    display: block;
+    width: 100%;
+    height: 300px;
+}
+
+.case-list ul li .cl-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 110px;
+    background: rgba(0, 0, 0, .3);
+    display: none;
+}
+
+.case-list ul li .cl-btn a:first-child {
+    display: block;
+    width: 115px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 0;
+    background: #007398;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.case-list ul li .cl-btn a {
+    display: block;
+    width: 115px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 0;
+    background: #808080;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.case-list ul li .cl-btn a:last-child {
+    margin-bottom: 0;
+}
+
+.case-list ul li .cl-btn button:hover, .case-list ul li .cl-btn a:hover {
+    box-shadow: 0 0 10px #000;
+}
+
+.case-list ul li p {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 12px;
+    color: #666666;
+    font-size: 14px;
+    border-top: 1px solid #d1d1d1;
+}
+
+.case-list ul li .add {
+    float: left;
+    width: 100%;
+}
+
+.case-list ul li .add a {
+    display: block;
+}
+
+.case-list ul li .add .add-img {
+    width: 100%;
+    height: 300px;
+    background: #f1f1f1 url(/images/load-page/add.png) no-repeat center;
+}
+
+/*分页*/
+.paging {
+    width: 100%;
+    padding: 45px 30px;
+}
+
+.paging ul {
+    display: inline-block;
+    width: auto;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    vertical-align: top;
+}
+
+.paging ul li {
+    float: left;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    color: #333;
+    font-size: 14px;
+    border-right: 1px solid #dddddd;
+    cursor: pointer;
+}
+
+.paging ul li.on {
+    color: #fff;
+    background: #007398;
+}
+
+.paging span {
+    line-height: 30px;
+    margin-left: 20px;
+}
+

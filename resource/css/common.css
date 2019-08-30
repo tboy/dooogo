@@ -1,0 +1,217 @@
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+::-webkit-scrollbar  
+{  
+    width: 8px;  
+    height: 8px;  
+    background-color: #f1f1f1;  
+}  
+  
+/*定义滚动条轨道 内阴影+圆角*/  
+::-webkit-scrollbar-track  
+{  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  
+    border-radius: 10px;  
+    background-color: #f1f1f1;  
+}  
+  
+/*定义滑块 内阴影+圆角*/  
+::-webkit-scrollbar-thumb  
+{  
+    border-radius: 10px;  
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);  
+    background-color: #555;  
+}  
+/*bootshrap reset*/
+.form-control, .single-line {
+    background-color: #FFFFFF;
+    background-image: none;
+    border: 1px solid #e5e6e7;
+    border-radius: 1px;
+    color: inherit;
+    display: block;
+    padding: 6px 12px;
+    -webkit-transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+    font-size: 14px;
+}
+.form-control, .form-control:focus, .has-error .form-control:focus, .has-success .form-control:focus, .has-warning .form-control:focus, .navbar-collapse, .navbar-form, .navbar-form-custom .form-control:focus, .navbar-form-custom .form-control:hover, .open .btn.dropdown-toggle, .panel, .popover, .progress, .progress-bar {
+    box-shadow: none;
+}
+label{
+	font-weight: normal;
+}
+
+/*use*/
+#add-company,#add-store{
+	margin-top:20px;
+}
+.container{
+	width:100%;
+	padding:20px;
+	background: #fff;
+}
+.container h4{
+	padding-bottom: 10px;
+	border-bottom:4px solid #f1f1f1;
+}
+.container h4.none{
+	padding-bottom: 10px;
+	border-bottom:none;
+}
+.form-group div{
+	line-height: 30px;
+}
+.f1-back{
+	padding:10px 0;
+	background: #f1f1f1;
+	margin:0;
+	font-size: 14px;
+}
+.item-industry{
+	display:inline-block;
+	padding:0px 10px;
+	background: #f1f1f1;
+	cursor: pointer;
+	margin:4px 0px;
+}
+
+.industry span.active{
+	background: #22b559;
+	color:#fff;
+}
+
+.reset-pass{
+	cursor: pointer;
+}
+
+.text-remark{
+	width:100%;
+	min-height:100px;
+	border: 1px solid #e5e6e7;
+}
+
+.line-margin{
+	padding:20px 0;
+}
+
+.submit-btn{
+	background: #ffffff;
+	padding:4px 0;
+}
+.submit-btn input{
+	border:none;
+	width: 100px;
+	height:30px;
+	background: #22b559;
+	color:#fff;
+	display: block;
+	margin:4px auto;
+	border-radius: 4px;
+}
+
+
+
+.item-shape{
+	float:left;
+	padding:0px 10px;
+}
+.item-shape label{
+	float:left;
+	font-size: 16px;
+}
+.item-shape input[type=radio],.item-shape input[type=checkbox]{
+	float:left;
+	height: 14px;
+	font-size: 16px;
+	margin-top:10px;
+	margin-right:4px;
+	opacity: 1;
+	position: static;
+}
+
+.area .row{
+	margin:10px 0; 
+}
+
+#permissions-set .row{
+	margin-bottom:10px;
+}
+
+.borders{
+	border:1px solid #e5e6e7;
+	height:34px;
+	line-height: 34px;
+	padding:0;
+	overflow: hidden;
+}
+
+.borders span{
+	margin:0 4px;
+	padding:4px 10px;
+	background: #007398;
+	color:#fff;
+}
+.borders svg{
+	margin-left:6px;
+	cursor: pointer;
+}
+
+
+.set-item{
+	float:left;
+	margin-right:20px;
+}
+
+.set-item input{
+	margin-right:4px;
+	position:static !important;
+	opacity:1 !important;
+	height:14px !important;
+}
+.set-item label {
+	display:inline-block;
+	height:20px;
+}
+
+.padding-30{
+	padding:10px 30px;
+}
+
+.table{
+	/*margin-top:20px;*/
+}
+
+.table tr th {
+	/*font-weight: normal;*/
+	/*border: none !important;*/
+	/*background: #f1f1f1;*/
+}  
+.table tr td {
+	/*border: 0 !important;*/
+}
+.table tbody tr {
+	    border-bottom: 1px solid #f1f1f1;
+}
+
+.set a{
+	margin: 0 10px;
+	color:#007398;
+}
+.pages{
+	text-align:center;
+}
+.container .none a:hover{color: #ffffff}
+.container .table thead{background: #f1f1f1}
+
+.add-company{
+	border-radius: 2px;
+	background: #007398;
+	font-size: 14px;
+	color:#fff;
+	text-decoration: none;
+	line-height: 30px;
+	text-align: center;
+	padding: 5px;
+}
+

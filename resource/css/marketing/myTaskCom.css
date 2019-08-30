@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.myContent {
+    height: 100%;
+    position: relative;
+}
+
+.myContent > div {
+    padding: 0 28px;
+}
+
+.top_title {
+    height: 52px;
+    line-height: 52px;
+    background: #edf6fa;
+    font-weight: bolder;
+}
+
+.nav .line {
+    border-bottom: 2px solid #e6e6e6;
+    height: 20px;
+    width: 100px;
+}
+
+.nav li {
+    width: 86px;
+    float: left;
+}
+
+.nav img {
+    height: 30px;
+    float: none;
+    display: block;
+    padding-left: 25px;
+    margin-bottom: 15px;;
+}
+
+.nav {
+    width: 515px;
+    margin: auto;
+    margin-top: 12px;
+}
+
+.value_button {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    background: #007398;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-size: 12px;
+    font-weight: 100;
+    border-radius: 2px;
+    margin: 0 0 0 10px;
+}
+
+.ct {
+    width: 100%;
+    height: auto;
+
+    border-top: 1px solid #e6e6e6;
+    margin: 30px 0;
+}
+
+.next {
+    float: left;
+    width: 80px;
+    margin-left: 30%;
+}
+
+.ct .titl {
+    margin-top: 20px;
+
+}
+
+.active {
+    color: #007398;
+}
