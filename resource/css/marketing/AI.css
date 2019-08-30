@@ -1,0 +1,577 @@
+#content {
+    width: 100%;
+}
+
+.num {
+    font-size: 26px;
+    color: white;
+    font-weight: 100;
+}
+
+.num span {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    font-weight: 100;
+}
+
+.switchBtn {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+}
+
+.titl {
+    font-size: 12px;
+    font-weight: bold;
+    font-weight: 100;
+    color: #cff0ff;
+}
+
+.banner {
+
+    background: -webkit-linear-gradient(top left, #247e9f, #1a5983);
+    height: 100px;
+    width: 100%;
+}
+
+.col {
+    width: 15%;
+    float: left;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 33px;
+}
+
+.small {
+    width: 100px;
+}
+
+.lineLeft {
+    border-right: 1px solid #4d8ca9;
+}
+
+/*************/
+.calendarList {
+    width: 100%;
+    background: #f1f1f1;
+    color: #666;
+    font-size: 14px;
+    height: 80px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.calendarContent {
+    width: 94%;
+    float: left;
+    height: 50px;
+}
+
+.leftArr {
+    float: left;
+    width: 10%;
+    padding-top: 30px;
+    cursor: pointer;
+}
+
+.nodeArr {
+    float: left;
+    width: 80%;
+    height: 80px;
+    overflow: hidden;
+}
+
+.node {
+    float: left;
+    width: 150px;
+    height: 80px;
+    background: #f1f1f1;
+    border-radius: 0;
+    line-height: 23px;
+}
+
+.node div:nth-child(2) {
+    width: 100%;
+}
+
+.node div:nth-child(3) {
+    background: #666;
+    color: white;
+    width: 117px;
+    margin: auto;
+}
+
+.act {
+    background: white;
+    border-top: 2px solid #086a8b;
+    border-right: 1px solid #C9C9C9;
+    border-left: 1px solid #C9C9C9;
+}
+
+.act div:nth-child(3) {
+    background: #086a8b;
+}
+
+.actBule div:nth-child(3) {
+    background: #086a8b;
+}
+
+.rightArr {
+    float: right;
+    width: 10%;
+    cursor: pointer;
+    padding-top: 30px;
+}
+
+.moreDate {
+    margin-top: 18px;
+    width: 6%;
+    float: left;
+}
+
+/*************/
+
+.rowType {
+    width: 100%;
+    border: 2px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    border-top: 0px;
+    height: 150px;
+}
+
+.grayTitl {
+    width: 100%;
+    font-size: 16px;
+    color: #666;
+    background: #f1f1f1;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+
+.colTitl {
+    margin-top: 30px;
+    float: left;
+    width: 150px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    font-weight: bold;
+}
+
+.col1 {
+    padding: 0px 10px;
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+    float: left;
+    width: 12%;
+    margin-top: 20px;
+    line-height: 30px;
+}
+
+.blueBig {
+    overflow: hidden;
+    font-size: 16px;
+    color: #086a8b;
+}
+
+.blueSmall {
+    font-size: 12px;
+    color: #086a8b;
+}
+
+.row1 {
+    width: 100%;
+}
+
+.rightBtn {
+    cursor: pointer;
+    border: 1px solid #086a8b;
+    color: #086a8b;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+/**************/
+.rowAI {
+    height: 100px;
+    line-height: 100px;
+    float: left;
+
+}
+
+.rowAI div {
+    float: left;
+    margin-right: 20px;
+}
+
+.blackBig {
+    font-size: 24px;
+    color: #666;
+}
+
+.blackSmall {
+    font-size: 14px;
+    color: #666;
+}
+
+.goods {
+    background: #ebebeb;
+    color: #666;
+    font-size: 14px;
+    float: left;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.rect {
+    color: #086a8b;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    width: 670px;
+    height: 260px;
+}
+
+.colorGray {
+    color: #666666;
+}
+
+.colorBlack {
+    color: #4c4c4c;
+}
+
+.rectHead {
+    border-bottom: 1px solid #e5e5e5;
+    height: 30px;
+    line-height: 30px;
+}
+
+.zhuziC {
+    width: 170px;
+    height: 20px;
+    background: #f5f5f5;
+}
+
+.zhuziB {
+    background: #007398;
+    height: 20px;
+}
+
+.info {
+    float: left;
+    margin-left: 50px;
+}
+
+.ttt1 {
+    margin-bottom: 5px;;
+    font-size: 14px;
+    color: #4c4c4c;
+}
+
+.ttt2 {
+    margin-top: 5px;;
+    font-size: 16px;
+    color: #4c4c4c;
+}
+
+.k1 {
+    margin-top: 20px;
+    width: 10%;
+    text-align: left;
+    float: left;
+    margin-left: 40px;
+    line-height: 20px;
+
+}
+
+.k1:first-child {
+    margin-left: 10px;
+
+}
+
+.k1 span {
+    display: block;
+}
+
+.colorGray {
+    font-size: 14px;
+    color: #999999;
+}
+
+.qrow {
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.buttomBtns {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 50px;
+    background: #f1f1f1;
+    padding-left: 35%;
+}
+
+.buttomBtns div {
+    cursor: pointer;
+    color: white;
+    background: #086a8b;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    float: left;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.defBlue {
+    color: #086a8b;
+}
+
+.defBlack {
+    color: #666666;
+}
+
+.defGray {
+    color: #666666;
+}
+
+.defBigFont {
+    font-size: 26px;
+}
+
+.defMiddleFont {
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+.defSmallFont {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.defGrayBackground {
+    background: #666;
+}
+
+.defLightGrayBackground {
+    background: #ebebeb;
+}
+
+#calendar {
+    width: 900px;
+
+}
+
+.calendar {
+    position: relative;
+    font-family: "Chinese Quote", "Microsoft YaHei";
+    font-size: 14px;
+}
+
+.calendar-header {
+    padding: 11px 16px 11px 0;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.calendar-select {
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.65);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    outline: 0;
+}
+
+.calendar-table {
+    width: 100%;
+    height: 100%;
+}
+
+.calendar-column-header,
+.calendar-cell {
+    width: 14%
+}
+
+.calendar-column-header {
+    font-weight: 400;
+    text-align: right;
+    padding-right: 12px;
+}
+
+.calendar-table {
+    table-layout: fixed;
+}
+
+.calendar-cell {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.calendar-cell.calendar-last-month-cell,
+.calendar-cell.calendar-next-month-cell {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.calendar-date {
+    padding: 4px 8px;
+    margin: 0 0px;
+    border: 1px solid #e8e8e8;
+}
+
+.calendar-cell.calendar-thisMonth .calendar-date,
+.calendar-cell.calendar-today .calendar-date {
+
+}
+
+.calendar-date:hover {
+    background: #e6f7ff;
+}
+
+.calendar-value {
+    padding-bottom: 21px;
+    text-align: right;
+    font-size: 10px;
+    color: #666;
+}
+
+.calendar-content {
+    height: 38px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: static;
+    width: auto;
+    left: auto;
+    bottom: auto;
+}
+
+.calendar-select {
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.btn.calendar-select-active {
+    border-color: #40a9ff;
+    z-index: 2;
+}
+
+.calendar-select:first-child {
+    margin-right: 10px;
+}
+
+.calendar-year-select,
+.calendar-month-select {
+    border-radius: 4px;
+    border: 1px solid #d9d9d9;
+}
+
+.calendar-year-select:hover,
+.calendar-month-select:hover {
+    border-color: #40a9ff;
+}
+
+.calendar-year-text,
+.calendar-month-text {
+    margin: 0 10px;
+    line-height: 28px;
+}
+
+.calendar-icon {
+    margin: 0 10px 0 0;
+}
+
+.calendar-icon * {
+    color: rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+    float: left;
+    padding: 5px 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+.btn-group {
+    float: left;
+    display: inline;
+    padding: 0 8px;
+}
+
+.btn-group > .btn {
+    position: relative;
+    float: left;
+}
+
+.btn-group > .btn:hover {
+    z-index: 2;
+    border-color: #40a9ff;
+}
+
+.btn-group .btn + .btn {
+    margin-left: -1px;
+}
+
+.btn-group > .btn:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.btn-group > .btn:last-child:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.goleft {
+    float: left;
+    font-size: 20px;
+    margin-left: 20px;
+    color: blue;
+    cursor: pointer;
+}
+
+.goright {
+    float: right;
+    color: blue;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.gocenter {
+    float: left;
+    width: 88%;
+
+    text-align: center;
+    margin: auto;
+}
+
+.upBlue {
+    border-top: 2px solid #086a8b;
+}
+
+.upGray {
+    border-top: 2px solid #666;
+}
+
+.st {
+    text-align: center;
+}
+
+.node_status {
+    font-size: 11px;
+}

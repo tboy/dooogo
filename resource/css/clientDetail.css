@@ -1,0 +1,280 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    margin-top: 20px;
+    min-width: 1000px;
+    color: #4D4D4D;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.rowCli {
+    width: 100%;
+    margin: auto;
+    border-bottom: 1px solid #cbcbcb;
+    height: auto;
+    padding: 20px 10px;
+}
+
+.head {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin-right: 20px;
+    position: absolute;
+    left: 0px;
+    top: 0;
+}
+
+.userinfo li {
+    height: 44px;
+    line-height: 44px;
+    float: left;
+    width: 50%;
+}
+
+.userinfo li p {
+    border-top: 1px solid #d1d1d1;
+    margin-right: 20px;
+}
+
+.userinfo li span {
+    width: 80px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.userinfo tr {
+    width: 300px;
+
+}
+
+.userinfo td {
+
+    height: 44px;
+    line-height: 44px;
+    width: 300px;
+    border-top: 1px solid #d1d1d1;
+    margin-right: 20px;
+    float: left;
+    display: block;
+}
+
+.userinfo div {
+    float: left;
+    width: 143px;
+}
+
+.userinfo td div:first-child {
+    color: #9D9D9D;
+}
+
+.xingxing {
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
+.xingxing img {
+    width: 22px;
+}
+
+.xingxing .xr {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.grade {
+    width: 170px;
+}
+
+.grade-line {
+    width: 136px;
+    float: left;
+}
+
+.grade-num {
+    float: left;
+    color: #f75a5f;
+    font-size: 20px;
+}
+
+#salesEchars div:first-child {
+    margin-top: -21px !important;
+    margin-left: -94px !important;
+}
+
+.itemCol {
+    float: left;
+    width: 25%;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+
+.itemCol p:first-child {
+    font-size: 20px;
+    color: #007398;
+}
+
+.itemCol p:last-child {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #4d4d4d;
+}
+
+.colCli {
+    float: left;
+    width: 24%;
+    height: 262px;
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.colCli .title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #666;
+}
+
+.blue1 {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #007398;
+    text-align: center;
+}
+
+.blue2 {
+    font-size: 14px;
+    color: #666666;
+    text-align: center;
+}
+
+.barTxt {
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+.barTitle {
+    font-size: 14px;
+    color: #4c4c4c;
+    padding-left: 20px;
+    width: 94px;
+}
+
+.barCon {
+    background: #f5f5f5;
+    height: 31px;
+    padding: 5px;
+}
+
+.redBar {
+    background: #f75a5f;
+    height: 50%;
+}
+
+.grayBar {
+    background: #666666;
+    height: 50%;
+}
+
+.blueBar {
+    background: #007398;
+    height: 50%;
+}
+
+.barLv1 {
+    color: #007398;
+    font-size: 14px;
+}
+
+.barLv2 {
+    color: #4c4c4c;
+    font-size: 12px;
+}
+
+.barRow {
+    margin-top: 10px;
+    padding-right: 80px;
+    position: relative;
+}
+
+.zhuzi {
+    width: 20%;
+    float: left;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.cutes {
+    padding-right: 20px;
+    padding-top: 50px;
+}
+
+.bb1 {
+    color: #007398;
+    font-size: 20px;
+}
+
+.zhuzii {
+    width: 28px;
+    height: 130px;
+    margin: auto;
+}
+
+.blueBars {
+    background: #007398;
+}
+
+.cuts {
+    float: left;
+}
+
+.quans {
+    height: 248px;
+    width: 370px;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    overflow-y: scroll;
+}
+
+.bigM {
+    font-size: 24px;
+}
+
+.xiaoM {
+    font-size: 14px;
+    padding-top: 7px;
+}
+
+.xiaoM span:first-child {
+    float: left;
+    font-size: 14px;
+}
+
+.xiaoM span:last-child {
+    float: right;
+    font-size: 14px;
+}
+
+.qy {
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #fffabc;
+    width: 335px;
+    height: 77px;
+}
+
+.userinfo-module {
+    padding: 0 200px 0px 220px;
+    position: relative;
+}

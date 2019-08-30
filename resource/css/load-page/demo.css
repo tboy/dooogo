@@ -1,0 +1,358 @@
+html, body{background: #ffffff;}
+.load{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+}
+
+.index{
+	max-width: 400px;
+	margin: 0 auto;
+	margin-bottom: .4rem;
+	position: relative;
+}
+.index img{
+	max-width: 100%;
+}
+
+
+.detail-a{
+	width: 100%;
+	margin-bottom: .3rem;
+}
+.detail-a img{
+	display: block;
+	width: 100%;
+}
+
+.detail-b{
+	width: 100%;
+	padding: 0 .25rem;
+	box-sizing: border-box;
+	margin-bottom: .3rem;
+}
+.title-lg{
+	padding: 0 .25rem;
+	color: #000000;
+	font-size: .46rem;
+	text-align: center;
+	line-height: .52rem;
+	margin-bottom: .12rem;
+}
+.title-sm{
+	padding: 0 .25rem;
+	color: #000000;
+	font-size: .36rem;
+	text-align: center;
+	line-height: .52rem;
+	margin-bottom: .12rem;
+}
+
+.text-lg{
+	padding: 0 .25rem;
+	color: #000000;
+	font-size: .32rem;
+	text-align: justify;
+	line-height: .54rem;
+}
+.text-sm{
+	padding: 0 .25rem;
+	color: #000000;
+	font-size: .26rem;
+	text-align: justify;
+	line-height: .42rem;
+}
+
+.coupon{
+	width: 100%;
+	position: relative;
+}
+.coupon.coupon-r{
+	background: url(/images/load-page/yhq-red.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.coupon.coupon-g{
+	background: url(/images/load-page/yhq-green.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.coupon.coupon-y{
+	background: url(/images/load-page/yhq-yellow.png) no-repeat center;
+	background-size: 100% 100%;
+}
+.coupon button{
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	width: 2.2rem;
+	height: 1.76rem;
+	line-height: 1.76rem;
+	text-align: center;
+	color: #ffffff;
+	font-size: .3rem;
+	background: none;
+	border: 0;
+}
+.coupon .yh-top{
+	width: 100%;
+	padding: .22rem .2rem;
+	box-sizing: border-box;
+}
+.coupon .yh-top .yh-p1{
+	line-height: .4rem;
+	color: #fc3d4f;
+	font-size: .36rem;
+	font-weight: bold;
+}
+.coupon .yh-top .yh-p2{
+	line-height: .38rem;
+	color: #666666;
+	font-size: .2rem;
+	margin-bottom: .22rem;
+}
+.coupon .yh-top .yh-p3{
+	line-height: .3rem;
+	color: #666666;
+	font-size: .26rem;
+}
+.coupon .yh-bottom{
+	width: 100%;
+	height: .8rem;
+	line-height: .8rem;
+}
+.coupon .yh-bottom img{
+	float: left;
+	width: .6rem;
+	height: .6rem;
+	border-radius: 50%;
+	margin-top: .1rem;
+	margin-right: .1rem;
+}
+.coupon .yh-bottom span{
+	float: right;
+	color: #000000;
+	font-size: .26rem;
+}
+.coupon .yh-bottom span font{
+	color: #fc3d4f;
+	font-size: .36rem;
+}
+
+.coupon.coupon-r .yh-top .yh-p1,.coupon.coupon-r  .yh-bottom span font{
+	color: #fc3d4f;
+}
+.coupon.coupon-g .yh-top .yh-p1,.coupon.coupon-g  .yh-bottom span font{
+	color: #32b16c;
+}
+.coupon.coupon-y .yh-top .yh-p1,.coupon.coupon-y  .yh-bottom span font{
+	color: #ffba00;
+}
+
+.detail-c{
+	width: 100%;
+	margin-bottom: .3rem;
+}
+.detail-c img{
+	display: block;
+	width: 100%;
+}
+.detail-zw{
+	width: 100%;
+}
+
+.detail-d{
+	width: 100%;
+	padding: .5rem 0;
+	background: #f2f2f2;
+}
+.detail-d .dd-title{
+	width: 100%;
+	line-height: .42rem;
+	text-align: center;
+	margin-bottom: .55rem;
+	position: relative;
+}
+.detail-d .dd-title .dd-border{
+	position: absolute;
+	top: .21rem;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	height: 1px;
+	background: #cccccc;
+}
+.detail-d .dd-title span{
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 .25rem;
+	background: #f2f2f2;
+	color: #000;
+	font-size: .36rem;
+	position: relative;
+	z-index: 4;
+}
+.detail-d .dd-list{
+	width: 100%;
+}
+.detail-d .dd-list ul{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.detail-d .dd-list ul li{
+	width: 48%;
+	margin-bottom: .3rem;
+}
+.detail-d .dd-list ul li a{
+	display: block;
+}
+.detail-d .dd-list ul li img{
+	width: 100%;
+}
+
+.detail-e{
+	width: 100%;
+	padding: 0 .25rem;
+	box-sizing: border-box;
+	margin-bottom: .3rem;
+}
+.detail-e .de-col{
+	width: 100%;
+	margin-bottom: .3rem;
+}
+.detail-e .de-col input{
+	width: 100%;
+	height: .9rem;
+	padding: 0 .3rem;
+	box-sizing: border-box;
+	border: 0;
+	background: #f2f2f2;
+	font-size: .32rem;
+}
+.pubBtn{
+	width: 100%;
+}
+.pubBtn button{
+	width: 100%;
+	height: .9rem;
+	color: #fff;
+	font-size: .42rem;
+	background: #ccc;
+	border: 0;
+}
+
+.nav{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 6;
+	width: 100%;
+	height: 1.0rem;
+	background: #fff;
+	box-shadow: 0 0 5px rgba(41,124,225,.1);
+}
+.nav ul{
+	display: flex;
+	justify-content: space-between;
+}
+.nav ul li{
+	flex: 1;
+	text-align: center;
+}
+.nav ul li a{
+	display: block;
+	height: 1.0rem;
+	padding-top: .7rem;
+	line-height: .24rem;
+	color: #666666;
+	font-size: .22rem;
+}
+.nav ul li:nth-of-type(1) a{
+	background: url(/images/load-page/nav1.png) no-repeat center .04rem;
+	background-size: .56rem;
+}
+.nav ul li:nth-of-type(2) a{
+	background: url(/images/load-page/nav2.png) no-repeat center .04rem;
+	background-size: .56rem;
+}
+.nav ul li:nth-of-type(3) a{
+	background: url(/images/load-page/nav3.png) no-repeat center .04rem;
+	background-size: .56rem;
+}
+
+.nav ul li:nth-of-type(1).active a{
+	background: url(../images/load-page/nav1-a.png) no-repeat center .04rem;
+	background-size: .56rem;
+}
+.nav ul li:nth-of-type(2).active a{
+	background: url(/images/load-page/nav2-a.png) no-repeat center .04rem;
+	background-size: .56rem;
+}
+.nav ul li:nth-of-type(3).active a{
+	background: url(/images/load-page/nav3-a.png) no-repeat center .04rem;
+	background-size: .56rem;
+}
+
+
+.detail-title{
+	width: 100%;
+	background: #ffffff;
+	border-bottom: 1px solid #dedede;
+	margin-bottom: 20px;
+}
+.detail-title .dt-m{
+	width: 400px;
+	height: 50px;
+	line-height: 50px;
+	margin: 0 auto;
+	color: #666666;
+	font-size: 18px;
+}
+
+.ewm{
+	position: absolute;
+	top: 0;
+	right: -170px;
+	z-index: 4;
+	width: 155px;
+	text-align: center;
+}
+.ewm .ewm-box{
+	padding: 10px;
+	border: 1px solid #dedede;
+	background: #fff;
+	margin-bottom: 15px;
+}
+.ewm .ewm-box p{
+	line-height: 32px;
+	color: #666666;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+.ewm .ewm-box img{
+	width: 100%;
+}
+.ewm a{
+	display: block;
+	width: 100%;
+	line-height: 28px;
+	background: #fff;
+	border-radius: 3px;
+	border: 1px solid #b3b3b3;
+	color: #666666;
+	font-size: 14px;
+	transition: all .5s;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-o-transition: all .5s;
+}
+.ewm a:hover{
+	box-shadow: 0 0 5px #333;
+}
+
+
+

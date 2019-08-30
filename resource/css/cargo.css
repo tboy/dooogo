@@ -1,0 +1,17 @@
+.ui-draggable, .ui-droppable {
+    background-position: top;
+}
+
+.shelves {
+    margin: 0px;
+    padding: 10px;
+    background: #ffffff;
+    border:1px solid #cccccc;
+    min-height: 200px;
+}
+
+.shelves .draggable {
+    width: 150px;
+    height: 150px;
+    padding: 5em;
+}

@@ -1,0 +1,39 @@
+.row {
+    min-height: 30px;
+    margin-top: 30px;
+}
+
+.lb {
+    margin-right: 30px;
+    width: 140px;
+    font-weight: 400;
+    float: left;
+    font-size: 12px;
+    line-height: 30px;
+    padding-left: 40px;
+    box-sizing: border-box;
+}
+
+.rg {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.select_time_box {
+    text-align: center;
+    min-height: 30px;
+}
+
+.cp {
+    background-image: url() !important;
+    padding: 0 !important;
+    text-align-last: center;
+}
+
+select {
+    text-align-last: center;
+    text-align: center;
+}
+
+
+	
