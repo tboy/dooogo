@@ -1,0 +1,109 @@
+.rect {
+		width: 100%;
+	}
+
+	.top {
+		background: #fafafa;
+		height: 3.5rem;
+		width: 100%;
+		font-size: 0.9rem;
+		padding: 0 1rem;
+		padding-top: 0.5rem;
+	}
+
+	.top .l1 {
+		width: 100%;
+		height: 1.5rem;
+
+	}
+
+	.top .l1 div:nth-child(1) {
+		float: left;
+	}
+
+	.top .l1 div:nth-child(2) {
+		float: right;
+	}
+
+	.top .l2 {
+		height: 1rem;
+		width: 100%;
+	}
+
+	.top .l2 div:nth-child(1) {
+		float: left;
+	}
+
+	.top .l2 div:nth-child(2) {
+		float: right;
+	}
+
+	.cont {
+		width: 100%;
+		padding: 0 1rem;
+		padding-top: 1rem;
+		background: white;
+	}
+
+	.order {
+		width: 100%;
+		height: 5.5rem;
+		font-size: 0.9rem;
+	}
+
+	.order .left {
+		float: left;
+		width: 5rem;
+		height: 5rem;
+	}
+
+	.order .left img {
+		float: left;
+		width: 5rem;
+		height: 5rem;
+		border-radius: 0.5rem;
+	}
+
+	.order .right {
+		float: right;
+		width: 75%;
+	}
+
+	.order .right .detail {
+		width: 100%;
+
+
+	}
+
+	.order .right .sum {
+		width: 100%;
+
+	}
+
+	.order .right .sum div:nth-child(1) {
+		float: left;
+	}
+
+	.order .right .sum div:nth-child(2) {
+		float: right;
+	}
+
+	.total {
+		font-size: 0.9rem;
+		width: 100%;
+		padding: 0 1rem;
+		background: white;
+		text-align: right;
+		border-bottom: 1px solid #e6e6e6;
+		padding-bottom: 1rem;
+	}
+
+	.closeOrder {
+		font-size: 0.9rem;
+		text-align: center;
+		height: 3rem;
+		display: block;
+		cursor: pointer;
+		background: white;
+		line-height: 3rem;
+	}

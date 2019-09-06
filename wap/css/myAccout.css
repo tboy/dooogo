@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.my-account_top {
+  height: 170px;
+  background: #007398;
+  color: #fff;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+.my-account_top_text {
+  padding: 0 0 0 8px;
+}
+.my-account_top_money {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0 0;
+}
+.my-account_top_money span {
+  font-size: 32px;
+  margin: 0 8px 0 0;
+}
+.my-account_top_money div {
+  font-size: 40px;
+}
+.my-account_bottom {
+  height: 52px;
+  line-height: 52px;
+  padding: 0 28px;
+  color: #666;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e6e6e6;
+  position: relative;
+}
+.arrow {
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin: -9px 0 0 0;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}

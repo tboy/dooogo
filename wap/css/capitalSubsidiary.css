@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.spend {
+  height: 90px;
+  padding: 15px;
+  color: #666;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e6e6e6;
+  line-height: 1.5;
+}
+.spend_main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.spend_main_cord {
+  margin: 5px 0 0 0;
+}
+.spend_main_money {
+  font-size: 20px;
+  font-weight: bolder;
+}
+.spend_date {
+  color: #999;
+}
+.spend_main .active {
+  color: #ffa200;
+}

@@ -1,0 +1,41 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.manage-wrap {
+	height: 100vh;
+	position: relative;
+}
+.manage_item {
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #eee;
+	color: #666;
+}
+.manage_item img {
+	width: 18px;
+	height: 14px;
+	margin: 0 8px 0 0;
+}
+.item_button {
+	color: #007398;
+}
+.manage_button {
+	width: 160px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background: #005c7a;
+	color: #fff;
+	border-radius: 4px;
+	position: absolute;
+	bottom: 65px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.device_list{
+	text-decoration:none;
+	color:#666;
+}

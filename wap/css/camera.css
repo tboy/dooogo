@@ -1,0 +1,52 @@
+@charset "utf-8";
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,input,textarea{margin:0;padding:0;font-weight:normal;}
+img{vertical-align:top;border:none; max-width: 100%;}
+ul,li{list-style:none;}
+a{text-decoration:none;}
+body{font-family:"Microsoft YaHei","微软雅黑","Microsoft JhengHei","宋体",SimSun,Tahoma,Arial;}
+
+.capture_box{ padding: 10px; box-sizing: border-box;}
+.capture_img img{ width: 100%; margin-bottom: 20px;}
+.capture_btn {  background: #007398; color: #fff; width: 100%; line-height: 40px; text-align: center; display: block;}
+
+.capture_out_btn {
+    background: #007398;
+    color: #fff;
+    width: 100%;
+    line-height: 40px;
+    margin-top: 5%;
+    text-align: center;
+    display: block;
+}
+.capture_p_box{ display: flex; justify-content: space-between; align-items: center; line-height: 30px; margin-bottom: 10px; color: #333;}
+.capture_p_box a{ color: #007398;}
+
+
+.bg_box{ background: #eee;}
+.cap_box_p10{ padding: 10px; box-sizing: border-box;}
+.qrm_collapse{ color: #000; font-size: 14px; float: right;}
+.cap_icon{ width: 15px; height: 10px; background: url(../images/qrm-arrow-down.png) no-repeat; display: inline-block; margin-right: 5px; background-size: 15px 10px;}
+.capture_bott_btn{ background: #007398; color: #fff; width: 100%; line-height: 50px; text-align: center; display: block; position: fixed; bottom: 0; left: 0;}
+.problem_tab_box.active{ display: block;}
+.problem_tab_box{ display: none; font-size: 16px; color: #666; line-height: 2;}
+.clearfix:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfix{zoom:1}
+
+.qrm-input,.qrm-input2,.qrm-input3{outline: none;border:none;height: 30px; width: 180px;}
+.qrm-pinming{line-height: 40px; font-size: 14px;position: relative;}
+.qrm-pinming:hover{cursor: pointer;}
+.qrm-pinming input:hover{cursor: pointer;}
+.qrm-input-border{ padding:0 1%;}
+.qrm-pinming-panel{}
+.qrm-border{ background: #fff; margin-bottom: 10px;position: relative; padding: 10px;}
+.qrm-lev{margin:0;padding:0;}
+.qrm-lev>li{ width: 48%; margin:5px 1%; float: left; box-sizing: border-box;position: relative;display: block; padding: 0 5px; background: #eee; border: 2px solid #eee; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.qrm-lev-1>li.active{border: 2px solid #007398;color: #007398;}
+.qrm-lev-2>li.active{border: 2px solid #007398;color: #007398;}
+.qrm-lev-3>li.active{border: 2px solid #007398;color: #007398;}
+
+
+
+
+
+

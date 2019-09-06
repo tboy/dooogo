@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.device_configuration {
+  padding: 20px;
+  box-sizing: border-box;
+}
+.device_configuration_content img{
+  max-width: 100%; margin-bottom: 20px;
+}
+
+.device_configuration_button {
+  width: 100%;
+  height: 50px;
+  padding: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #298e2e;
+  margin: 0 0 12px 0;
+  background: #1aac19;
+}
+.device_configuration_button2{width: 100%;height: 50px;font-size: 18px;color: #000;display: block;text-align: center;border: 1px solid #dedde2;background:#f8f8f8;}
+button:focus {
+  outline: none;
+}
+
+
+.device_configuration2_content img{
+  width: 100%; margin-bottom: 20px;
+}
+.button_box_p20{padding: 20px;}
+.device_configuration2_button {
+  width: 100%;
+  height: 50px;
+  padding: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #07c160;
+  margin: 0 0 12px 0;
+  background: #07c160;
+}

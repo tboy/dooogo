@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -80px 0 0 -135px;
+  padding: 10px;
+  text-align: center; */
+  padding: 40px;
+}
+.auth-code_label {
+  margin: 0 0 15px 0;
+}
+.container p{
+  font-family: "微软雅黑";
+  color: #888;
+}
+.val-box {
+  display: flex;
+  justify-content: space-between;
+  /* display: inline-block;
+  height: 40px;
+  width: 216px; */
+  text-align: center;
+  position: relative;
+  background: #FFFFFF;
+  margin: 0 0 8px 0;
+}
+.val-box input[type=text] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 34px;
+  width: 100%;
+  opacity: 0.9;
+  z-index: -999;
+  outline: none;
+}
+
+.val-box div {
+  height: 34px;
+  width: 34px;
+  border-bottom: 1px solid #DDD;
+  /* border-radius: 5px; */
+  /* float: left; */
+  margin: 2px 3px;
+  z-index: 5;
+  font-size: 1.5em;
+  font-family: arial;
+  font-weight: 530;
+  text-align: center;
+  line-height: 1.5em;
+  cursor: text;
+}
+.val-box .available {
+  border-color: #0081db;
+}
+.auth-code_tip {
+  padding: 0 0 0 3px;
+}
+.auth-code_minutes {
+  color: #007398;
+  font-size: 14px;
+}
+.auth-code_text {
+  color: #999;
+  font-size: 14px;
+}
+.auth-code_button {
+  width: 100%;
+  height: 50px;
+  padding: 8px 0;
+  box-sizing: border-box;
+  border-radius: 25px;
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  margin: 12px 0 12px 0;
+  background: #007398;
+  outline: none;
+}
