@@ -32,73 +32,102 @@
 			}
 			.mui-table-view-cell:after {
 				height: 0px;
-			}			
+			}	
+			.tooltip {
+			  position: relative;
+			  cursor: pointer;
+			  background: #4d4d4d;
+			   color:white;
+			   padding:0.3rem 1rem;
+			   border-radius: 0.5rem;
+			   margin-right:1rem;
+			   margin-top:-0.5rem;
+			   position: absolute;
+			   right:30px;
+			   height:32px;
+			  
+			   
+			}
+			.ag{
+				 width: 0;
+				height: 0;
+				border-top: 5px solid transparent;
+				border-left: 5px solid #4d4d4d;
+				border-bottom: 5px solid transparent;
+				position:relative;
+				right:-106px;
+				top:-15px;
+			}
+
+
+
 		</style>
 	</head>
 	<body onLoad="init();">
 		<div class="mui-content" id="cont">
 			<div style="background: white; height:4rem;padding-top:1rem;border-bottom: 1px solid #e6e6e6;">
-				<input type="search" class="mui-input-clear" placeholder="输入订单编号/收货人/手机号码搜索">
+				<input type="search" class="mui-input-clear" placeholder="请输入商品名称搜索">
 			</div>
 			<div id="slider" class="mui-slider c6">
 				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-					<a :class="'mui-control-item '+(type==0?'mui-active':'')" href="orderList.html?type=0">
-						待付款
+					<a :class="'mui-control-item '+(type==0?'mui-active':'')" href="goodsList.html?type=0">
+						销售中
 					</a>
-					<a :class="'mui-control-item '+(type==1?'mui-active':'')" href="orderList.html?type=1">
-						待提货
+					<a :class="'mui-control-item '+(type==1?'mui-active':'')" href="goodsList.html?type=1">
+						已售罄
 					</a>
-					<a :class="'mui-control-item '+(type==2?'mui-active':'')" href="orderList.html?type=2">
-						已提货
+					<a :class="'mui-control-item '+(type==2?'mui-active':'')" href="goodsList.html?type=2">
+						仓库中
 					</a>
-					<a :class="'mui-control-item '+(type==3?'mui-active':'')" href="orderList.html?type=3">
-						更多状态
+					<a :class="'mui-control-item '+(type==3?'mui-active':'')" href="goodsList.html?type=3">
+						商品分组
 					</a>
 				</div>
 			</div>
 
 
-			<div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="top:110px;">
+			<div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="top:120px;">
 				<div class="mui-scroll">
 					<!--数据列表-->
 					<ul class="mui-table-view mui-table-view-chevron" style="background: #f2f2f2;">
 
 						<template v-for="item in list">
-							<li style="padding:0;margin-bottom: 1.5rem;" class="mui-table-view-cell mui-media  mui-collapse mui-collapse-content">
+							<li style="padding:0;margin-bottom: 1rem;" class="mui-table-view-cell mui-media  mui-collapse mui-collapse-content">
 
 								<div class="rect">
-									<div class="top">
-										<div class="l1 c3">
-											<div>{{item.userName}}</div>
-											<div>{{item.state}}</div>
-										</div>
-										<div class="l2 c9">
-											<div>{{item.time}}</div>
-											<div>{{item.no}}</div>
-										</div>
-									</div>
 
+									<div class="cont">
 
-									<div class="cont" :id="item.id">
-										<template v-for="order in item.orders">
-											<div class="order">
-												<div class="left"><img :src="order.img"></div>
-												<div class="right">
-													<div class="detail c6">{{order.detail}}</div>
-													<div class="sum c9">
-														<div>￥{{order.money}}</div>
-														<div>×{{order.num}}</div>
+										<div class="order" style="height:6rem;">
+											<div class="left"><img :src="item.img"></div>
+											<div class="right">
+												<div class="detail c6">{{item.detail}}</div>
+												<div style="color:#f74b4d;font-size:0.9rem;font-weight: bolder;">
+													<div>￥{{item.money}}</div>
+
+												</div>
+												<div class="sum c9">
+													<div>
+														库存：{{item.store}}
+														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														销量：{{item.sellNum}}</div>
+													<div>
+														<div class="tooltip" v-if="item.showTip">
+															<span class="mui-icon mui-icon-compose edit" :id="item.id" style="font-size:0.9rem;">编辑</span>
+															<span class="mui-icon mui-icon-trash del" :id="item.id" style="font-size:0.9rem;">删除</span>
+															<div class="ag"></div>
+														</div>
+														<span :id="item.id" class="c6 tip" style="float:right;background: #F5F5F5;font-weight: bolder;line-height: 0.4rem;border-radius: 0.5rem;display: block;width: 1.5rem;text-align: center;height: 0.8rem;">...</span>
 													</div>
+
 												</div>
 											</div>
-										</template>
+										</div>
+
 
 									</div>
 
 
-									<div class="total c3">共{{item.num}}件商品 订单金额：￥{{item.total}}</div>
-
-									<a class="closeOrder cblue" v-if="item.state == '待付款'" :href="'javascript:closeOrder('+item.id+')'">关闭订单</a>
 
 								</div>
 							</li>
@@ -187,22 +216,12 @@
 	for (var i = 0; i < 10; i++) {
 		var item = {}
 		item.id = i;
-		item.userName = "大灿哥";
-		item.state = Math.random() > 0.3 ? "待付款" : (Math.random() > 0.5 ? "待提货" : "已提货");
-		item.time = "2019-09-08 12:00";
-		item.no = "12316234";
-
-		item.orders = [];
-		var order = {};
-		order.img = "../../1.png";
-		order.detail = "实物商品夏季时尚洋气百搭条纹短袖妈妈洋气百搭条纹共30个文字";
-		order.money = "23.02";
-		order.num = 2;
-		item.orders.push(order);
-
-		item.num = 2;
-		item.total = 23.02;
-
+		item.img = "../../1.png";
+		item.detail = "实物商品夏季时尚洋气百搭条纹短袖妈妈洋气百搭条纹共30个文字";
+		item.money = "23.02";
+		item.store = "2"
+		item.sellNum = 12;
+		item.showTip = false;
 		data.push(item);
 		var it = cloneObj(item);
 		it.id = i + i + "";
@@ -228,15 +247,15 @@
 			app.$data.list.push(dataSource[i]);
 		}
 
-		mui('body').on('tap', 'a', function() {
-			eval(this.href);
 
-		});
 
-		mui('body').on('tap', '.cont', function() {
-			//自己跳转  alert(this.id);
-			location.href = "orderDetail.html?id=" + this.id;
-		});
+
+		mui('body').off('tap', '.tip', showTipEvent);
+		mui('body').on('tap', '.tip', showTipEvent);
+		mui('body').off('tap', '.edit', editEvent);
+		mui('body').on('tap', '.edit', editEvent);
+		mui('body').off('tap', '.del', delEvent);
+		mui('body').on('tap', '.del', delEvent);
 
 		// 		var path = "";
 		// 		var pars =  {},
@@ -253,17 +272,27 @@
 		// 			}
 		// 		})
 	}
-	//关闭订单
-	function closeOrder(id) {
-		//id 自己后台删
 
-		for (var i = 0; i < app.$data.list.length; i++) {
-			if (app.$data.list[i].id == id) {
-				app.$data.list.splice(i, 1);
+	function showTipEvent() {
+		for (var key in app.$data.list) {
+			if (app.$data.list[key].id == this.id) {
+				app.$data.list[key].showTip = !app.$data.list[key].showTip;
+			} else {
+				app.$data.list[key].showTip = false;
 			}
 		}
-
 	}
+	function editEvent() {
+		location.href="goodsEdit.html?id="+this.id;
+	}
+	function delEvent() {
+		for (var key in app.$data.list) {
+			if (app.$data.list[key].id == this.id) {
+				app.$data.list.splice(key,1);
+			} 
+		}
+	}
+	
 
 
 	function cloneObj(item) {

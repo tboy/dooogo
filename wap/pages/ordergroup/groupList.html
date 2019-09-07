@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/orderList.css" />
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/vue.min.js"></script>
+		<style>
+			.mui-table-view-cell:after {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0px;
+				height: 1px;
+				content: '';
+				background-color: #c8c7cc;
+				-webkit-transform: scaleY(.5);
+				transform: scaleY(.5);
+			}
+			.clearLine:after{
+				height: 0px;
+			}
+		</style>
+	</head>
+	<body onLoad="init()">
+		<div id="cont" class="mui-content" style="font-size:0.9rem;">
+			<ul id="list" class="mui-table-view mui-table-view-chevron" style="margin-top:0;padding:0;">
+				<template v-for="(item,idx) in groups">
+				<li :class="'mui-table-view-cell '+(idx<groups.length-2?'clearLine':'')">
+					<a class="mui-navigate-right c3" :href="'groupEdit.html?id='+item.id">
+						<div class="c9">夏装</div>
+						共1件商品
+					</a>
+				</li>
+				</template>
+			</ul>
+
+			<a class="closeOrder cblue" style="margin-top:1rem;"  href="groupEdit.html">添加分组</a>
+
+		</div>
+	</body>
+</html>
+<script>
+	//下面数据自己用ID查
+	var app;
+	var list = [];
+	for(var i = 0;i<5;i++){
+		var item = {};
+		item.name="夏装"
+		item.id = i;
+		item.num = parseInt(Math.random()*10);
+		list.push(item);
+	}
+	
+	function init() {
+		app = new Vue({
+			el: '#cont',
+			data: {
+				groups:list
+			}
+		});
+	};
+	
+</script>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/orderList.css" />
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/vue.min.js"></script>
+		<style>
+			.mui-input-group .mui-input-row:after {
+		   
+		     height: 0px;
+		   
+		}
+		.mui-input-group .mui-input-row:before {
+		   
+		     height: 0px;
+		   
+		}
+		.mui-input-group:before {
+		  
+		    height: 0px;
+		   
+		}
+		.mui-input-group:after {
+		  
+		    height: 0px;
+		   
+		}
+		.mui-btn{
+			width:100%;
+			margin:auto;
+			
+			
+		}
+		.mui-table-view:before {
+   
+    height: 0px;
+   
+}
+.mui-table-view:after {
+    height: 0px;
+   
+}
+				</style>
+	</head>
+	<body onLoad="init();">
+		<div class="mui-content" id="cont">
+			<div class="mui-content-padded" style="margin:0;margin-top: 0.5rem;">
+
+				<form class="mui-input-group">
+					<div class="mui-input-row">
+						<label class="c3" style="font-size:0.9rem;">分组名称</label>
+						<input class="c3" v-model="name" style="font-size:0.9rem;" type="text" placeholder="输入分组名称">
+					</div>
+					<div class="mui-input-row">
+						<label class="c3" style="font-size:0.9rem;">序号</label>
+						<input class="c3" v-model="sort" style="font-size:0.9rem;" type="number" class="mui-input-clear" placeholder="输入序号">
+					</div>
+				</form>
+
+				<div class="mui-table-view c3" style="font-size:0.9rem;padding:0.5rem 1rem;margin-top:1rem;padding-top:0.5rem;">
+					<div class="mui-btn mui-btn-primary" onClick="saveHandel();" style="background:#086a8b;font-size:0.9rem;">
+						保存
+					</div>
+					<div class="mui-btn mui-btn-danger" onClick="delHandel();" v-if="isEdit" style="margin-top:0.5rem;font-size:0.9rem;">
+						删除
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	var type = getQueryString('id');
+
+	var app;
+	var obj = {};
+	if (type) {
+		obj.isEdit = true;
+		obj.id = type;
+		obj.name = "666";
+		obj.sort = 0;
+	} else {
+		obj.isEdit = false;
+		obj.name = "";
+		obj.sort = 0;
+	}
+
+
+	function init() {
+		app = new Vue({
+			el: '#cont',
+			data: obj
+		});
+	};
+
+
+	function saveHandel() {
+		///app.$data
+	}
+
+	function delHandel() {
+		///app.$data
+	}
+
+	function getQueryString(name) {
+		var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) {
+			return unescape(r[2]);
+		}
+		return null;
+	}
+</script>
