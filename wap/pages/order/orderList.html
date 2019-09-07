@@ -77,7 +77,7 @@
 									</div>
 
 
-									<div class="cont">
+									<div class="cont" :id="item.id">
 										<template v-for="order in item.orders">
 											<div class="order">
 												<div class="left"><img :src="order.img"></div>
@@ -148,6 +148,7 @@
 		mui('#sliderSegmentedControl').on('tap', 'a', function() {
 			location.href = this.href
 		});
+		
 		getData();
 	}
 
@@ -228,6 +229,11 @@
 		mui('body').on('tap', 'a', function() {
 			eval(this.href);
 
+		});
+		
+		mui('body').on('tap', '.cont',function() {
+			//自己跳转  alert(this.id);
+			location.href = "orderDetail.html?id="+this.id;
 		});
 
 		// 		var path = "";

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/orderList.css" />
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/vue.min.js"></script>
+	</head>
+	<body onload="init()">
+		<div class="mui-content" id="cont">
+			<div class="titl">
+				{{state}}
+			</div>
+
+			<div class="mui-table-view c3" style="font-size:0.9rem;width:100%;padding:0 1rem;height:3.5rem;padding-top:0.5rem;">
+				<div style="float:left;width:5rem;">买家</div>
+				<div>{{buyer}}</div>
+				<div style="float:left;width:5rem;">联系电话</div>
+				<div>{{phone}}</div>
+			</div>
+
+			<div class="mui-table-view c9" style="font-size:0.9rem;padding:0 1rem;margin-top:1rem;">
+				<div style="height:2rem;padding-top:0.5rem;margin-bottom:1rem;border-bottom: 1px solid #E6E6E6;">自提点<span>{{address}}</span></div>
+				<div class="rect">
+
+					<div class="cont" style="padding:0;">
+						<template v-for="order in orders">
+							<div class="order">
+								<div class="left"><img :src="order.img"></div>
+								<div class="right">
+									<div class="detail c6">{{order.detail}}</div>
+									<div class="sum c9">
+										<div>￥{{order.money}}</div>
+										<div>×{{order.num}}</div>
+									</div>
+								</div>
+							</div>
+						</template>
+
+					</div>
+
+
+					<div class="total c3">共{{num}}件商品 订单金额：￥{{total}}</div>
+
+
+
+				</div>
+
+
+			</div>
+
+			<div class="mui-table-view c3" style="font-size:0.9rem;padding:0 1rem;margin-top:1rem;height:8rem;padding-top:0.5rem;">
+				<div style="height:1.5rem;">
+					<div style="float:left;width:5rem;" class="c9">订单编号</div>
+					<div>{{orderNum}}</div>
+				</div>
+				<div style="height:1.5rem;">
+					<div style="float:left;width:5rem;" class="c9">订单时间</div>
+					<div>{{orderTime}}</div>
+				</div>
+				<div style="height:1rem;">
+					<div style="width: 100%;height:1px;border-bottom: 1px solid #E6E6E6;"></div>
+				</div>
+				<div style="height:1.5rem;">
+					<div style="float:left;">商品总价</div>
+					<div style="float:right;">￥{{totalMoney1}}</div>
+				</div>
+				<div style="height:1.5rem;">
+					<div style="float:left;">订单金额</div>
+					<div style="float:right;color:red;font-size:1.3rem;">￥{{totalMoney2}}</div>
+				</div>
+
+			</div>
+
+			<a class="closeOrder cblue" style="margin-top:1rem;" v-if="state == '待付款'" :href="'javascript:closeOrder('+id+')'">取消订单</a>
+		</div>
+	</body>
+</html>
+
+<script>
+	//下面数据自己用ID查
+	var app;
+	var obj = {};
+	obj.state = "待付款";
+	obj.buyer = "大灿哥";
+	obj.phone = "12345678910"
+	obj.address = "八方便利店（厦门市思明区北京路123号）";
+	obj.orders = [];
+	var order = {};
+	order.img = "../../1.png";
+	order.detail = "实物商品夏季时尚洋气百搭条纹短袖妈妈洋气百搭条纹共30个文字";
+	order.money = "23.02";
+	order.num = 2;
+	obj.orders.push(order);
+	obj.num = 2;
+	obj.total = 23.02;
+	obj.id = 1;
+
+	obj.orderNum = "4565465134";
+	obj.orderTime = "2019-01-12 12:00";
+	obj.totalMoney1 = 23.02;
+	obj.totalMoney2 = 23.02;
+
+	function init() {
+		app = new Vue({
+			el: '#cont',
+			data: obj
+		});
+	};
+
+	//关闭订单
+	function closeOrder(id) {
+		//id 自己后台删
+		alert(id);
+
+
+	}
+</script>
