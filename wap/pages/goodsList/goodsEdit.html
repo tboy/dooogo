@@ -86,7 +86,7 @@
 							</a>
 						</li>
 						<li class="mui-table-view-cell c3">
-							<a class="mui-navigate-right" :href="'stateSel.html?id='+id">
+							<a class="mui-navigate-right" :href="'stateSel.html?id='+id+'&selIdx='+state">
 								<span style="width:8rem;display:block;float:left;">状态</span>
 								{{goodsState}}
 							</a>
@@ -125,18 +125,27 @@
 	</body>
 </html>
 <script>
-	
+	//自己通过id查数据刷新
 	var app;
-
 	var goodsID = getQueryString("id");
+	
 	var obj = {}
 	obj.id = goodsID;
 	obj.goodsName = "大哥啤酒"
+	
+	
 	obj.goodsGroup = "夏季、秋装上架"
-    obj.goodsState = "销售中"
+	
+	//要么后台啦数据处理,要么修改后自己赋值
+	var state = getQueryString("state");
+	states = ["销售中", "已售罄", "仓库中"]
+    obj.goodsState = states[state];
+	obj.state = state;
+	
 	obj.price = 123;
 	obj.price2 = 322;
 	obj.store = 10;
+	
 	function init() {
 		app = new Vue({
 			el: '#cont',

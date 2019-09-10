@@ -72,6 +72,39 @@
 			.clearLine:after {
 				height: 0px;
 			}
+
+			.sel:after {
+				content: '\e472' !important;
+				right: 9px !important;
+				font-size: 30px !important;
+				font-weight: 600 !important;
+				color: white !important;
+				
+			}
+			.sel:before {
+				content: '\e472' !important;
+				right: 9px !important;
+				font-size: 30px !important;
+				font-weight: 600 !important;
+				
+			}
+			.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before {
+    font-family: Muiicons;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+    text-decoration: none;
+    background: 0 0;
+    border-radius: 0;
+    -webkit-font-smoothing: antialiased;
+}
+.mui-input-row{
+	border-bottom: 1px solid #c8c7cc;
+}
+.mui-input-row:last-child{
+	border-bottom: 0px solid #c8c7cc;
+}
 		</style>
 	</head>
 	<body onload="init()">
@@ -79,26 +112,22 @@
 			<div class="mui-content-padded" style="margin:0;margin-top: 0.5rem;">
 
 				<form class="mui-input-group">
-					<ul class="mui-table-view mui-table-view-radio" style="font-size:0.9rem;">
-						<li class="mui-table-view-cell">
-							<a class="mui-navigate-right  c3">
-								夏装
-							</a>
-						</li>
-						<li class="mui-table-view-cell  c3">
-							<a class="mui-navigate-right">
-								秋装
-							</a>
-						</li>
-						<li class="mui-table-view-cell c3">
-							<a class="mui-navigate-right">
-								冬装
-							</a>
-						</li>
-					</ul>
+					<template v-for="(item,idx) in groups">
+						<div class="mui-input-row mui-checkbox" :onclick="'mySel('+item.id+')'">
+							<label class="c3" style="font-size:0.9rem;">{{item.name}}</label>
+							<template v-if="item.isSel==0">
+								<input class="sel" :value="item.id" type="checkbox">
+								{{item.isSel}}
+							</template>
+							<template v-if="item.isSel==1">
+								<input class="sel" :value="item.id" type="checkbox" checked="checked">
+								{{item.isSel}}
+							</template>
+						</div>
+					</template>
 
 				</form>
-<div class="mui-table-view c3" style="font-size:0.9rem;padding:0.5rem 1rem;margin-top:1rem;padding-top:0.5rem;">
+				<div class="mui-table-view c3" style="font-size:0.9rem;padding:0.5rem 1rem;margin-top:1rem;padding-top:0.5rem;">
 					<div class="mui-btn mui-btn-primary" onClick="saveHandel();" style="background:#086a8b;font-size:0.9rem;">
 						保存
 					</div>
@@ -113,12 +142,31 @@
 	var goodsID = getQueryString("id");
 	var obj = {}
 	obj.id = goodsID;
-	obj.goodsName = "大哥啤酒"
-	obj.goodsGroup = "夏季、秋装上架"
-	obj.goodsState = "销售中"
-	obj.price = 123;
-	obj.price2 = 322;
-	obj.store = 10;
+	obj.groups = [{
+		id: 0,
+		name: "夏装",
+		isSel: 0
+	}, {
+		id: 1,
+		name: "秋装",
+		isSel: 0
+	}, {
+		id: 2,
+		name: "冬装",
+		isSel: 0
+	}];
+
+	//处理选中//自己处理
+	//var groupsIds = getQueryString("groupIds").split(",");
+	var groupsIds = [1, 2]
+	for (var i = 0; i < obj.groups.length; i++) {
+		for (var j = 0; j < groupsIds.length; j++) {
+			if (obj.groups[i].id + '' == groupsIds[j] + '') {
+				obj.groups[i].isSel = 1;
+			}
+		}
+
+	}
 
 	function init() {
 		app = new Vue({
@@ -126,6 +174,30 @@
 			data: obj
 		});
 
+	}
+
+	function mySel(id) {
+		for (var i = 0; i < obj.groups.length; i++) {
+			if (obj.groups[i].id + '' == id + '') {
+				obj.groups[i].isSel = obj.groups[i].isSel == 0 ? 1 : 0;
+				return;
+			}
+		}
+		saveHandel()
+
+	}
+
+	function saveHandel() {
+		//保存后自己跳回去
+		//app.$data.obj
+		var ids = [];
+		for (var i = 0; i < obj.groups.length; i++) {
+			if (obj.groups[i].isSel == 1) {
+				ids.push(obj.groups[i].id);
+			}
+		}
+		console.log(ids.join(","));
+		location.href = "goodsEdit.html?id=" + obj.id;
 	}
 
 	function getQueryString(name) {

@@ -80,25 +80,17 @@
 
 				<form class="mui-input-group">
 					<ul class="mui-table-view mui-table-view-radio" style="font-size:0.9rem;">
-						<li class="mui-table-view-cell">
-							<a class="mui-navigate-right  c3">
-								销售中
-							</a>
-						</li>
-						<li class="mui-table-view-cell  c3">
-							<a class="mui-navigate-right">
-								已售罄
-							</a>
-						</li>
-						<li class="mui-table-view-cell c3">
-							<a class="mui-navigate-right">
-								仓库中
-							</a>
-						</li>
+						<template v-for="(item,idx) in states">
+							<li :class="'mui-table-view-cell '+(idx==sel?'mui-selected':'')" :onclick="'mySel('+idx+')'">
+								<a class="mui-navigate-right  c3" style="font-size:0.9rem;">
+									{{item}}
+								</a>
+							</li>
+						</template>
 					</ul>
 
 				</form>
-<div class="mui-table-view c3" style="font-size:0.9rem;padding:0.5rem 1rem;margin-top:1rem;padding-top:0.5rem;">
+				<div class="mui-table-view c3" style="font-size:0.9rem;padding:0.5rem 1rem;margin-top:1rem;padding-top:0.5rem;">
 					<div class="mui-btn mui-btn-primary" onClick="saveHandel();" style="background:#086a8b;font-size:0.9rem;">
 						保存
 					</div>
@@ -113,19 +105,26 @@
 	var goodsID = getQueryString("id");
 	var obj = {}
 	obj.id = goodsID;
-	obj.goodsName = "大哥啤酒"
-	obj.goodsGroup = "夏季、秋装上架"
-	obj.goodsState = "销售中"
-	obj.price = 123;
-	obj.price2 = 322;
-	obj.store = 10;
-
+	obj.states = ["销售中", "已售罄", "仓库中"]
+	
+	var selIdx = getQueryString("selIdx");
+    obj.sel = selIdx;//选中的id
+	
 	function init() {
 		app = new Vue({
 			el: '#cont',
 			data: obj
 		});
 
+	}
+	function mySel(idx){
+		app.$data.sel=idx;
+	}
+	function saveHandel(){
+		////保存后自己跳回去
+		//app.$data.obj
+        location.href="goodsEdit.html?id="+obj.id;
+		//location.href="goodsEdit.html?state="+app.$data.sel+"&id="+goodsID;
 	}
 
 	function getQueryString(name) {
