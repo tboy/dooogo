@@ -108,12 +108,18 @@
 	line-height: 3rem;
 }
 
-.titl{
-	width:100%;
-	color:white;
+.titl {
+	width: 100%;
+	color: white;
 	background: #086a8b;
-	height:3rem;
-	font-size:1.1rem;
-	padding:0 1rem;
-	line-height:3rem;
+	height: 3rem;
+	font-size: 1.1rem;
+	padding: 0 1rem;
+	line-height: 3rem;
+}
+
+.mui-btn {
+	color: #fff;
+	background-color: #007aff;
+	border: 1px solid #086a8b;
 }

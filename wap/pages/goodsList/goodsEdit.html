@@ -57,28 +57,31 @@
 				left: 0px;
 				height: 1px;
 				content: '';
-				background-color: #c8c7cc;
+				background-color: #f2f2f2;
 				-webkit-transform: scaleY(.5);
 				transform: scaleY(.5);
 			}
 			.clearLine:after{
 				height: 0px;
 			}
+			.mui-input-row{
+				border-bottom: 1px solid #e3e3e5;
+			}
 		</style>
 	</head>
 	<body onload="init()">
 		<div class="mui-content" id="cont">
-			<div class="mui-content-padded" style="margin:0;margin-top: 0.5rem;">
+			<div class="mui-content-padded" style="background: #f2f2f2; margin:0;margin-top: 0.5rem;">
 
 				<form class="mui-input-group">
 
-					<div class="mui-input-row">
-						<label class="c3" style="font-size:0.9rem;">商品名称</label>
-						<input class="c3" v-model="goodsName" style="font-size:0.9rem;width: 40%;float: left;" type="text" class="mui-input-clear"
-						 placeholder="">
-					</div>
+					
 					<ul id="list" class="mui-table-view mui-table-view-chevron" style="font-size:0.9rem; margin-top:0;padding:0;">
-
+						<li class="mui-table-view-cell c3">
+							<label class="c3"  style="width:8rem;display:block;float:left;">商品名称</label>
+							<input class="c3" v-model="goodsName" style="padding:0;padding-top: 0.3rem;height:1rem;font-size:0.9rem;width: 30%;float: left;" type="text" class="mui-input-clear"
+							 placeholder="">
+						</li>
 						<li class="mui-table-view-cell c3">
 							<a class="mui-navigate-right" :href="'groupSel.html?id='+id">
 								<span style="width:8rem;display:block;float:left;">商品分组</span>
@@ -97,23 +100,27 @@
 
 				</form>
 				<form class="mui-input-group" style="margin-top:1rem;">
-					<div class="mui-input-row">
-						<label class="c3" style="font-size:0.9rem;">价格</label>
-						<input class="c3" v-model="price" style="font-size:0.9rem;width: 40%;float: left;" type="number" class="mui-input-clear"
-						 placeholder="">
-					</div>
-					<div class="mui-input-row">
-						<label class="c3" style="font-size:0.9rem;">市场价</label>
-						<input class="c3" v-model="price2" style="font-size:0.9rem;width: 40%;float: left;" type="number" class="mui-input-clear"
-						 placeholder="">
-						<div class="c3" style="font-size:0.9rem;float:right;padding-right:1rem;">元/件</div>
-					</div>
-					<div class="mui-input-row">
-						<label class="c3" style="font-size:0.9rem;">库存</label>
-						<input class="c3" v-model="store" style="font-size:0.9rem;width: 40%;float: left;" type="number" class="mui-input-clear"
-						 placeholder="">
-						<div class="c3" style="font-size:0.9rem;float:right;padding-right:1rem;">件</div>
-					</div>
+					<ul class="mui-table-view mui-table-view-chevron" style="font-size:0.9rem; margin-top:0;padding:0;">
+						<li class="mui-table-view-cell c3">
+							<label class="c3"  style="width:8rem;display:block;float:left;">价格</label>
+							<input class="c3" v-model="price" style="padding:0;padding-top: 0.3rem;height:1rem;font-size:0.9rem;width: 30%;float: left;" type="text" class="mui-input-clear"
+							 placeholder="">
+							 
+						</li>
+						<li class="mui-table-view-cell c3" style="padding-right:0;">
+							<label class="c3"  style="width:8rem;display:block;float:left;">市场价</label>
+							<input class="c3" v-model="price2" style="padding:0;padding-top: 0.3rem;height:1rem;font-size:0.9rem;width: 30%;float: left;" type="text" class="mui-input-clear"
+							 placeholder="">
+							 <div class="c3" style="font-size:0.9rem;float:right;padding-right:1rem;">元/件</div>
+						</li>
+						<li class="mui-table-view-cell c3 " style="padding-right:0;">
+							<label class="c3"  style="width:8rem;display:block;float:left;">库存</label>
+							<input class="c3" v-model="store" style="padding:0;padding-top: 0.3rem;height:1rem;font-size:0.9rem;width: 30%;float: left;" type="text" class="mui-input-clear"
+							 placeholder="">
+							 <div class="c3" style="font-size:0.9rem;float:right;padding-right:1rem;">件</div>
+						</li>
+					</ul>
+					
 				</form>
 				<div class="mui-table-view c3" style="font-size:0.9rem;padding:0.5rem 1rem;margin-top:1rem;padding-top:0.5rem;">
 					<div class="mui-btn mui-btn-primary" onClick="saveHandel();" style="background:#086a8b;font-size:0.9rem;">
@@ -128,24 +135,26 @@
 	//自己通过id查数据刷新
 	var app;
 	var goodsID = getQueryString("id");
-	
+
 	var obj = {}
 	obj.id = goodsID;
 	obj.goodsName = "大哥啤酒"
-	
-	
+
+
 	obj.goodsGroup = "夏季、秋装上架"
-	
+
 	//要么后台啦数据处理,要么修改后自己赋值
 	var state = getQueryString("state");
+	state = 0;
 	states = ["销售中", "已售罄", "仓库中"]
-    obj.goodsState = states[state];
+	obj.goodsState = states[state];
 	obj.state = state;
-	
+    
+ 
 	obj.price = 123;
 	obj.price2 = 322;
 	obj.store = 10;
-	
+
 	function init() {
 		app = new Vue({
 			el: '#cont',
@@ -153,7 +162,7 @@
 		});
 
 	}
-	
+
 	function getQueryString(name) {
 		var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
 		var r = window.location.search.substr(1).match(reg);

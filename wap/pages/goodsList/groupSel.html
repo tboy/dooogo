@@ -64,7 +64,7 @@
 				left: 0px;
 				height: 1px;
 				content: '';
-				background-color: #c8c7cc;
+				background-color: #f2f2f2;
 				-webkit-transform: scaleY(.5);
 				transform: scaleY(.5);
 			}
@@ -100,16 +100,24 @@
     -webkit-font-smoothing: antialiased;
 }
 .mui-input-row{
-	border-bottom: 1px solid #c8c7cc;
+	border-bottom: 1px solid #f2f2f2;
 }
 .mui-input-row:last-child{
-	border-bottom: 0px solid #c8c7cc;
+	border-bottom: 0px solid #f2f2f2;
+}
+.mui-input-group .mui-input-row:after {
+   
+    background-color: #f2f2f2 !important;
+    
+}
+.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before {
+    color: #086a8b;
 }
 		</style>
 	</head>
 	<body onload="init()">
 		<div class="mui-content" id="cont">
-			<div class="mui-content-padded" style="margin:0;margin-top: 0.5rem;">
+			<div class="mui-content-padded" style="background: #f2f2f2;margin:0;margin-top: 0.5rem;">
 
 				<form class="mui-input-group">
 					<template v-for="(item,idx) in groups">
