@@ -32,7 +32,19 @@
 			}
 			.mui-table-view-cell:after {
 				height: 0px;
-			}			
+			}		
+				input[type=search] {
+    border-radius: 20px;
+    width: 95%;
+    height: 30px;
+    display: block;
+    margin: auto;
+    background: #f5f5f5;
+    color: #999;
+}
+.mui-input-row:after{
+				background-color: #f2f2f2 !important;
+			}
 		</style>
 	</head>
 	<body onLoad="init();">
@@ -51,14 +63,23 @@
 					<a :class="'mui-control-item '+(type==2?'mui-active':'')" href="orderList.html?type=2">
 						已提货
 					</a>
-					<a :class="'mui-control-item '+(type==3?'mui-active':'')" href="orderList.html?type=3">
+					<a :class="'mui-control-item '+(type==3?'mui-active':'')" href="javascript:app.$data.showState=true;">
 						更多状态
 					</a>
 				</div>
 			</div>
+			<div v-if="showState" style="position:absolute;width:100%;z-index: 999999;background: white;">
+				<form class="mui-input-group">
+					<template v-for="item in allStates">
+						<div class="mui-input-row" :onclick="'selState('+item.id+')'">
+							<label class="c3" style="font-size:0.9rem;">{{item.state}}</label>
+						</div>
+					</template>
 
+				</form>
+			</div>
 
-			<div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="top:110px;">
+			<div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="top:110px;background: #f2f2f2;">
 				<div class="mui-scroll">
 					<!--数据列表-->
 					<ul class="mui-table-view mui-table-view-chevron" style="background: #f2f2f2;">
@@ -120,11 +141,19 @@
 	if (type == null) {
 		type = 0;
 	}
-
+    function selState(id){
+		app.$data.state = id;
+		app.$data.showState = false;
+		//自己加载数据刷新id getData();
+	}
+	var allStates = [{id:1,state:"退款中"},{id:2,state:"已退款"},{id:3,state:"已关闭"},{id:3,state:"已完成"}]
 	function init() {
 		app = new Vue({
 			el: '#cont',
 			data: {
+				allStates:allStates,
+				showState:false,
+				state:'',//商品类型查询参数
 				list: [],
 				type: type,
 				totalPage: 2,
@@ -194,7 +223,7 @@
 
 		item.orders = [];
 		var order = {};
-		order.img = "../../1.png";
+		order.img = "../../imgs/def.png";
 		order.detail = "实物商品夏季时尚洋气百搭条纹短袖妈妈洋气百搭条纹共30个文字";
 		order.money = "23.02";
 		order.num = 2;

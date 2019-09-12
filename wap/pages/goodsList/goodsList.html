@@ -63,6 +63,9 @@
     top: 0;
     background: #f2f2f2;
 }
+.mui-input-row:after{
+				background-color: #f2f2f2 !important;
+			}
 		</style>
 	</head>
 	<body onLoad="init();">
@@ -81,12 +84,24 @@
 					<a :class="'mui-control-item '+(type==2?'mui-active':'')" href="goodsList.html?type=2">
 						仓库中
 					</a>
-					<a :class="'mui-control-item '+(type==3?'mui-active':'')" href="goodsList.html?type=3">
+					<a :class="'mui-control-item '+(type==3?'mui-active':'')" href="javascript:app.$data.goodsTypeShow=true">
 						商品分组
 					</a>
+
 				</div>
+
 			</div>
 
+			<div v-if="goodsTypeShow" style="position:absolute;width:100%;z-index: 999999;background: white;">
+				<form class="mui-input-group">
+					<template v-for="item in goodsGroup">
+					<div class="mui-input-row" :onclick="'selGroup('+item.id+')'">
+						<label class="c3" style="font-size:0.9rem;">{{item.name}}</label>
+					</div>
+					</template>
+					
+				</form>
+			</div>
 
 			<div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="top:120px;    background: #f2f2f2;">
 				<div class="mui-scroll">
@@ -116,15 +131,15 @@
 													<div>
 														<div class="tooltip" v-if="item.showTip">
 															<span class="mui-icon  edit" :id="item.id" style="font-size:0.9rem;">
-																<img src="../../imgs/edit.png" style="height:1rem;"/>
-																
+																<img src="../../imgs/edit.png" style="height:1rem;" />
+
 															</span>
 															&nbsp;&nbsp;&nbsp;
 															<span class="mui-icon  del" :id="item.id" style="font-size:0.9rem;">
-																<img src="../../imgs/del.png" style="height:1rem;"/>
-																
-																</span>
-																
+																<img src="../../imgs/del.png" style="height:1rem;" />
+
+															</span>
+
 															<div class="ag"></div>
 														</div>
 														<span :id="item.id" class="c6 tip" style="float:right;background: #F5F5F5;font-weight: bolder;line-height: 0.4rem;border-radius: 0.5rem;display: block;width: 1.5rem;text-align: center;height: 0.8rem;">...</span>
@@ -159,11 +174,14 @@
 	if (type == null) {
 		type = 0;
 	}
-
+    var goodsGroup = [{id:1,name:"夏装"},{id:2,name:"秋装"},{id:3,name:"你好系列"}]
 	function init() {
 		app = new Vue({
 			el: '#cont',
 			data: {
+				goodsGroup:goodsGroup,
+				goodsTypeShow:false,
+				goodsType:'',//商品类型查询参数
 				list: [],
 				type: type,
 				totalPage: 2,
@@ -282,7 +300,7 @@
 		// 			}
 		// 		})
 	}
-
+  //显示编辑删除
 	function showTipEvent() {
 		for (var key in app.$data.list) {
 			if (app.$data.list[key].id == this.id) {
@@ -306,6 +324,12 @@
 	}
 
 
+
+    function selGroup(id){
+		app.$data.goodsType = id;
+		app.$data.goodsTypeShow = false;
+		//自己加载数据刷新id getData();
+	}
 
 	function cloneObj(item) {
 
