@@ -54,7 +54,7 @@
 				border-left: 5px solid #4d4d4d;
 				border-bottom: 5px solid transparent;
 				position:relative;
-				    right: -117px;
+				    right: -120px;
     top: -18px;
 			}
 
@@ -71,7 +71,7 @@
 	<body onLoad="init();">
 		<div class="mui-content" id="cont">
 			<div style="background: white; height:4rem;padding-top:1rem;border-bottom: 1px solid #e6e6e6;">
-				<input type="search" class="mui-input-clear" placeholder="请输入商品名称搜索">
+				<input type="search" v-model="keyWord" class="mui-input-clear" onblur="getData();" placeholder="请输入商品名称搜索">
 			</div>
 			<div id="slider" class="mui-slider c6">
 				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
@@ -84,7 +84,7 @@
 					<a :class="'mui-control-item '+(type==2?'mui-active':'')" href="goodsList.html?type=2">
 						仓库中
 					</a>
-					<a :class="'mui-control-item '+(type==3?'mui-active':'')" href="javascript:app.$data.goodsTypeShow=true">
+					<a id="groupType" :class="'mui-control-item '+(type==3?'mui-active':'')" href="javascript:app.$data.goodsTypeShow=true">
 						商品分组
 					</a>
 
@@ -130,14 +130,14 @@
 														销量：{{item.sellNum}}</div>
 													<div>
 														<div class="tooltip" v-if="item.showTip">
-															<span class="mui-icon  edit" :id="item.id" style="font-size:0.9rem;">
-																<img src="../../imgs/edit.png" style="height:1rem;" />
-
+															<span class="mui-icon  edit" :id="item.id" style="font-size:0.8rem;">
+																<img src="../../imgs/edit.jpg" style="height:1.1rem;" />
+																<span style="display: block;float: right; line-height: 1.4rem;">编辑</span>
 															</span>
 															&nbsp;&nbsp;&nbsp;
-															<span class="mui-icon  del" :id="item.id" style="font-size:0.9rem;">
-																<img src="../../imgs/del.png" style="height:1rem;" />
-
+															<span class="mui-icon  del" :id="item.id" style="font-size:0.8rem;">
+																<img src="../../imgs/del.jpg" style="height:1.1rem;" />
+																<span style="display: block;float: right; line-height: 1.4rem;">删除</span>
 															</span>
 
 															<div class="ag"></div>
@@ -182,6 +182,7 @@
 				goodsGroup:goodsGroup,
 				goodsTypeShow:false,
 				goodsType:'',//商品类型查询参数
+				keyWord:'',//搜索关键字
 				list: [],
 				type: type,
 				totalPage: 2,
@@ -316,11 +317,14 @@
 	}
 
 	function delEvent() {
-		for (var key in app.$data.list) {
-			if (app.$data.list[key].id == this.id) {
-				app.$data.list.splice(key, 1);
+		if(confirm("确定删除商品？")) {
+			for (var key in app.$data.list) {
+				if (app.$data.list[key].id == this.id) {
+					app.$data.list.splice(key, 1);
+				}
 			}
-		}
+			}
+		
 	}
 
 
@@ -328,6 +332,14 @@
     function selGroup(id){
 		app.$data.goodsType = id;
 		app.$data.goodsTypeShow = false;
+		debugger;
+		for(var i = 0;i<app.$data.goodsGroup.length;i++){
+			if(app.$data.goodsGroup[i].id == id) {
+				document.getElementById("groupType").innerText=app.$data.goodsGroup[i].name;
+			}
+			
+		}
+		
 		//自己加载数据刷新id getData();
 	}
 

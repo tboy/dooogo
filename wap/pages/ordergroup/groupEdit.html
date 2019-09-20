@@ -62,11 +62,11 @@
 				<form class="mui-input-group">
 					<div class="mui-input-row">
 						<label class="c3" style="font-size:0.9rem;">分组名称</label>
-						<input class="c3" v-model="name" style="font-size:0.9rem;" type="text" placeholder="输入分组名称">
+						<input class="c3" v-model="name" onkeyup="handleTxt();" style="font-size:0.9rem;" type="text" placeholder="输入分组名称">
 					</div>
 					<div class="mui-input-row">
 						<label class="c3" style="font-size:0.9rem;">序号</label>
-						<input class="c3" v-model="sort" style="font-size:0.9rem;" type="number" class="mui-input-clear" placeholder="输入序号">
+						<input class="c3" v-model="sort" style="font-size:0.9rem;" onkeyup="handleNum();" type="number" class="mui-input-clear" placeholder="输入序号">
 					</div>
 				</form>
 
@@ -74,7 +74,7 @@
 					<div class="mui-btn mui-btn-primary" onClick="saveHandel();" style="background:#086a8b;font-size:0.9rem;">
 						保存
 					</div>
-					<div class="mui-btn mui-btn-danger" onClick="delHandel();" v-if="isEdit" style="margin-top:0.5rem;font-size:0.9rem;">
+					<div class="mui-btn mui-btn-danger" onClick="delHandel();" v-if="isEdit" style="background:#086a8b;margin-top:0.5rem;font-size:0.9rem;">
 						删除
 					</div>
 				</div>
@@ -83,6 +83,15 @@
 	</body>
 </html>
 <script>
+	
+	function handleTxt(){
+		app.$data.name = app.$data.name.substr(0,10);
+	}
+	
+	function handleNum(){
+		var num = parseInt(app.$data.sort);
+		app.$data.sort = num<0?0:(num>1000?1000:num);
+	}
 	var type = getQueryString('id');
 
 	var app;
