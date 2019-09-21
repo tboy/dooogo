@@ -97,7 +97,13 @@
 					<template v-for="item in goodsGroup">
 					<div class="mui-input-row" :onclick="'selGroup('+item.id+')'">
 						<label class="c3" style="font-size:0.9rem;">{{item.name}}</label>
+						
 					</div>
+					<template v-for="item2 in item.sub">
+						<div class="mui-input-row" style="padding-left:2rem;" :onclick="'selGroup('+item2.id+')'">
+							<label class="c3" style="font-size:0.9rem;">{{item2.name}}</label>
+						</div>
+					</template>
 					</template>
 					
 				</form>
@@ -174,7 +180,7 @@
 	if (type == null) {
 		type = 0;
 	}
-    var goodsGroup = [{id:1,name:"夏装"},{id:2,name:"秋装"},{id:3,name:"你好系列"}]
+    var goodsGroup = [{id:1,name:"夏装",sub:[{id:11,name:"夏装1"},{id:12,name:"夏装2"}]},{id:2,name:"秋装"},{id:3,name:"你好系列"}]
 	function init() {
 		app = new Vue({
 			el: '#cont',
