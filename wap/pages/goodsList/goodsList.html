@@ -285,12 +285,12 @@
 
 
 
-		mui('body').off('tap', '.tip', showTipEvent);
-		mui('body').on('tap', '.tip', showTipEvent);
-		mui('body').off('tap', '.edit', editEvent);
-		mui('body').on('tap', '.edit', editEvent);
-		mui('body').off('tap', '.del', delEvent);
-		mui('body').on('tap', '.del', delEvent);
+		mui('#pullrefresh').off('tap', '.tip', showTipEvent);
+		mui('#pullrefresh').on('tap', '.tip', showTipEvent);
+		mui('#pullrefresh').off('tap', '.edit', editEvent);
+		mui('#pullrefresh').on('tap', '.edit', editEvent);
+		mui('#pullrefresh').off('tap', '.del', delEvent);
+		mui('#pullrefresh').on('tap', '.del', delEvent);
 
 		// 		var path = "";
 		// 		var pars =  {},
