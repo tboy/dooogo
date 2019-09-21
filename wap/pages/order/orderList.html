@@ -50,7 +50,7 @@
 	<body onLoad="init();">
 		<div class="mui-content" id="cont">
 			<div style="background: white; height:4rem;padding-top:1rem;border-bottom: 1px solid #e6e6e6;">
-				<input type="search" class="mui-input-clear" placeholder="输入订单编号/收货人/手机号码搜索">
+				<input type="search" v-model="keyWord" onblur="getData()" class="mui-input-clear" placeholder="输入订单编号/收货人/手机号码搜索">
 			</div>
 			<div id="slider" class="mui-slider c6">
 				<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
@@ -156,6 +156,7 @@
 				state:'',//商品类型查询参数
 				list: [],
 				type: type,
+				keyWord:'',
 				totalPage: 2,
 				currentPage: 1
 			}
@@ -242,6 +243,7 @@
 
 	//加载数据
 	function getData() {
+		
 		var dataSource;
 		if (app.$data.currentPage == 1) {
 			dataSource = data;
