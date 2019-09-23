@@ -209,6 +209,14 @@
 				obj.groups[i].isSel = obj.groups[i].isSel == 0 ? 1 : 0;
 				return;
 			}
+			if(obj.groups[i].sub){
+				for(var j = 0;j <obj.groups[i].sub.length;j++){
+					if (obj.groups[i].sub[j].id + '' == id + '') {
+						obj.groups[i].sub[j].isSel = obj.groups[i].sub[j].isSel == 0 ? 1 : 0;
+						return;
+					}
+				}
+			}
 		}
 		saveHandel()
 
