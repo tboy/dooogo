@@ -338,10 +338,14 @@
     function selGroup(id){
 		app.$data.goodsType = id;
 		app.$data.goodsTypeShow = false;
-		debugger;
 		for(var i = 0;i<app.$data.goodsGroup.length;i++){
 			if(app.$data.goodsGroup[i].id == id) {
 				document.getElementById("groupType").innerText=app.$data.goodsGroup[i].name;
+			}
+			if(app.$data.goodsGroup[i].sub){
+				for(var j = 0;j<app.$data.goodsGroup[i].sub.length;j++){
+					document.getElementById("groupType").innerText=aapp.$data.goodsGroup[i].sub[j].name;
+				}
 			}
 			
 		}
