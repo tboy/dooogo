@@ -121,6 +121,7 @@
 
 				<form class="mui-input-group">
 					<template v-for="(item,idx) in groups">
+						
 						<div class="mui-input-row mui-checkbox" :onclick="'mySel('+item.id+')'">
 							<label class="c3" style="font-size:0.9rem;">{{item.name}}</label>
 							<template v-if="item.isSel==0">
@@ -132,6 +133,19 @@
 								{{item.isSel}}
 							</template>
 						</div>
+						<template v-for="(item1,idx) in item.sub">
+							<div style="padding-left:1rem;" class="mui-input-row mui-checkbox" :onclick="'mySel('+item1.id+')'">
+								<label class="c3" style="font-size:0.9rem;">{{item1.name}}</label>
+								<template v-if="item1.isSel==0">
+									<input class="sel" :value="item1.id" type="checkbox">
+									{{item.isSel}}
+								</template>
+								<template v-if="item1.isSel==1">
+									<input class="sel" :value="item1.id" type="checkbox" checked="checked">
+									{{item.isSel}}
+								</template>
+							</div>
+						</template>
 					</template>
 
 				</form>
@@ -153,7 +167,12 @@
 	obj.groups = [{
 		id: 0,
 		name: "夏装",
-		isSel: 0
+		isSel: 0,
+		sub: [{
+			id: 11,
+			name: "夏装1",
+			isSel: 0,
+		}]
 	}, {
 		id: 1,
 		name: "秋装",
