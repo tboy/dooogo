@@ -68,7 +68,7 @@
 			}
 		</style>
 	</head>
-	<body onLoad="init();">
+	<body onLoad="init();" style="display: none;">
 		<div class="mui-content" id="cont">
 			<div style="background: white; height:4rem;padding-top:1rem;border-bottom: 1px solid #e6e6e6;">
 				<input type="search" v-model="keyWord" class="mui-input-clear" onblur="getData();" placeholder="请输入商品名称搜索">
@@ -216,6 +216,9 @@
 		});
 
 		getData();
+		setTimeout(function(){
+			document.body.style.display='block';
+		},500)
 	}
 
 	/**
