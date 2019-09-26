@@ -26,11 +26,13 @@
 				-webkit-transform: scaleY(.5);
 				transform: scaleY(.5);
 			}
-			.clearLine:after{
+
+			.clearLine:after {
 				height: 0px;
 			}
-			.mui-table-view-cell:after{
-				background-color:#f2f2f2;
+
+			.mui-table-view-cell:after {
+				background-color: #f2f2f2;
 			}
 		</style>
 	</head>
@@ -38,28 +40,17 @@
 		<div id="cont" class="mui-content" style="background-color:#f2f2f2;font-size:0.9rem;">
 			<ul id="list" class="mui-table-view mui-table-view-chevron" style="margin-top:0;padding:0;">
 				<template v-for="(item,idx) in groups">
-				<li class="mui-table-view-cell">
-					<a class="mui-navigate-right c9" style="color:#999;" :href="'groupEdit.html?id='+item.id">
-						<div class="c3">{{item.name}}</div>
-						共{{item.num}}件商品
-					</a>
-				</li>
-				
-				     <template v-for="(item1,idx) in item.sub">
-						 <li class="mui-table-view-cell">
-							 
-						 	<a class="mui-navigate-right c9" style="color:#999;padding-left:2rem;" :href="'groupEdit.html?id='+item1.id">
-						 		<div class="c3">--{{item1.name}}</div>
-						 		&nbsp;&nbsp;共{{item1.num}}件商品
-						 	</a>
-						 </li>
-					</template>
-					
-					
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right c9" style="color:#999;" :href="'javascript:back('+item.id+');'">
+							<div class="c3">{{item.name}}</div>
+
+						</a>
+					</li>
+
 				</template>
 			</ul>
 
-			<a class="closeOrder cblue" style="margin-top:1rem;"  href="groupEdit.html">添加分组</a>
+
 
 		</div>
 	</body>
@@ -68,22 +59,38 @@
 	//下面数据自己用ID查
 	var app;
 	var list = [];
-	for(var i = 0;i<2;i++){
+	var item = {};
+	item.name = "顶级分类"
+	item.id = 0;
+
+	list.push(item);
+	for (var i = 0; i < 2; i++) {
 		var item = {};
-		item.name="夏装"
+		item.name = "夏装" + i
 		item.id = i;
-		item.num = parseInt(Math.random()*10);
-		item.sub = [{id:i+i,name:"夏装子目录",num:parseInt(Math.random()*10)}]
+		item.num = parseInt(Math.random() * 10);
 		list.push(item);
 	}
-	
+
+
+	function back(id) {
+       setCookie("key",id);
+	   history.back();
+	}
+
+	function setCookie(name, value) {
+		var Days = 30;
+		var exp = new Date();
+		exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+		document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+	}
+
 	function init() {
 		app = new Vue({
 			el: '#cont',
 			data: {
-				groups:list
+				groups: list
 			}
 		});
 	};
-	
 </script>

@@ -1,4 +1,4 @@
-﻿function UploadBase64() {
+function UploadBase64() {
 
     this.sw = 0;
 
@@ -131,15 +131,8 @@ UploadBase64.prototype._handelSelectFile = function (ev) {
 
     }
 
-    console.log(file);
 
-    if (file.size > 300*1024) {
-
-        alert('选择文件大于' + 300  + 'kb，请重新选择');
-
-        return;
-
-    }
+   
 
  
 
@@ -298,13 +291,7 @@ UploadBase64.prototype._drawImage = function (img, callback) {
      var isMatch=false;
     var w =  img.width;
     var  h =  img.height;
-    if(w==800 && h==800){
-                     isMatch = true;
-                 }
-    if(!isMatch){
-        alert("尺寸不正确");
-        return;
-   }
+   
     this.sw = img.width;
 
     this.sh = img.height;
