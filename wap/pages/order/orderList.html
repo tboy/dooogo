@@ -47,7 +47,7 @@
 			}
 		</style>
 	</head>
-	<body onLoad="init();">
+	<body onLoad="init();" style="display:none;">
 		<div class="mui-content" id="cont">
 			<div style="background: white; height:4rem;padding-top:1rem;border-bottom: 1px solid #e6e6e6;">
 				<input type="search" v-model="keyWord" onblur="getData()" class="mui-input-clear" placeholder="输入订单编号/收货人/手机号码搜索">
@@ -182,6 +182,9 @@
 		});
 
 		getData();
+		setTimeout(function(){
+			document.body.style.display='block';
+		},500)
 	}
 
 	/**
